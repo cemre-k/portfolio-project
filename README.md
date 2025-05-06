@@ -1,1 +1,1 @@
-This is a practice project mimicing a portfolio page. 
+This is a practice project - creating a portfolio page. 
