@@ -29,7 +29,7 @@ const observer = new IntersectionObserver((entries) => {
 }, {
     threshold: 0.5 // Trigger when 50% of the section is visible
 });
-
+sections.forEach((section) => observer.observe(section));
 /* 
  * Enables dark mode by adding the "dark" class to the body
  * and saving the preference in localStorage.
