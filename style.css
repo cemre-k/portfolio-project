@@ -81,6 +81,7 @@
   }
   
   .container {
+    position: relative;
     width: 100%;
     height: 100%;
     display: flex;
@@ -221,6 +222,7 @@
 
   #theme-toggle-btn{
     background-color: var(--text-color);
+    border: 3px solid var(--light-accent);
     position: absolute;
     width: 50px;
     height: 50px;
@@ -246,11 +248,12 @@
   }
   
   #home {
-    margin-top: 80px;
+    margin-top: 150px;
   }
   
   #home img {
     border-radius: 10px;
+    width: 70vw;
   }
   
   .section-container {
@@ -263,6 +266,10 @@
     border: 1px solid var(--section-border);
     background-color: var(--section-bg);
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
   
   #projects h2 {
@@ -274,7 +281,7 @@
     display: flex;
     flex-wrap: wrap;
     width: fit-content;
-    justify-content: space-around;
+    justify-content: space-between;
     gap: 60px;
   }
   
@@ -299,6 +306,8 @@
     color: transparent;
     -webkit-text-fill-color: transparent;
     font-weight: 900;
+    margin-bottom: 30px;
+    margin-top: 0;
   }
   
   footer {
@@ -321,25 +330,24 @@
     text-decoration: underline;
     transform: scale(1.1);
   }
- /*  Dark mode toggle button
-  .theme-toggle {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 20;
-    background: var(--nav-gradient);
-    border: none;
-    color: white;
-    padding: 8px 15px;
-    border-radius: 20px;
-    cursor: pointer;
-    font-weight: bold;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-  } */
+
   
   @media (max-width: 1200px) {
+    .active-nav::before{
+      content: none;
+    }
+    .active-nav{
+      bottom: 0;
+      transform: scale(1.3);
+    }
     header {
-      gap: 30px;
+      gap: 18px;
+      height: 140px;
+      padding-right: 15px;
+    }
+    #theme-toggle-btn{
+      left: 18px;
+      bottom: -60px;
     }
   
     nav {
@@ -350,6 +358,12 @@
       margin: auto 50px;
       flex-direction: column;
     }
+    .project-list{
+      margin: 0 50%;
+      padding: 0;
+
+    }
+    
   }
   
   @media (max-width: 925px) {
@@ -359,4 +373,5 @@
     .tagline::after {
       display: none;
     }
+    
   }

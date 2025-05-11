@@ -27,9 +27,13 @@ const observer = new IntersectionObserver((entries) => {
         }
     });
 }, {
-    threshold: 0.5 // Trigger when 50% of the section is visible
+    rootMargin: "-50% 0px -50% 0px", // Center the intersection point
+    threshold: 0 // Trigger as soon as the section intersects
 });
+
+// Observe all sections
 sections.forEach((section) => observer.observe(section));
+
 /* 
  * Enables dark mode by adding the "dark" class to the body
  * and saving the preference in localStorage.
